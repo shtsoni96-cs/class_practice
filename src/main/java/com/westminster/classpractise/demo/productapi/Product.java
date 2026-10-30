@@ -1,16 +1,16 @@
 package com.westminster.classpractise.demo.productapi;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
-public class Product {
+public abstract class Product {
 
     private static int instanceCount = 0;
 
-    private int id;
+    private long id;
     private String name;
     private int qty;
     private boolean inStock;
     private double price;
-
+    
     @JsonCreator
     public Product() {
         this(0, null, 0, false, 0.0);
@@ -25,11 +25,12 @@ public class Product {
         this.price = price;
     }
 
+
     public double calculateTotal() {
         return price * qty;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -72,4 +73,9 @@ public class Product {
     public static int getInstanceCount() {
         return instanceCount;
     }
+
+    public String getSummary() {
+        return name + " — £" + price;
+    }
+
 }

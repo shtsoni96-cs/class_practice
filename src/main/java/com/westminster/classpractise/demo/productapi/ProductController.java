@@ -36,7 +36,12 @@ public class ProductController {
     public Map<String, Object> allSingleInstance() {
         List<Product> productList = new ArrayList<>();
         int id = 123;
-        Product product = new Product(id, "Product-" + id, 20, true, 199.99);
+        Product product = new Product(id, "Product", 20, true, 199.99) {
+            @Override
+            public String getSummary() {
+                return "";
+            }
+        };
         for (int index = 0; index <= 4; index++) {
             id += index;
             productList.add(product);
