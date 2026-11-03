@@ -78,4 +78,7 @@ public abstract class Product {
         return name + " — £" + price;
     }
 
+    public abstract void applyDiscount(double rate);
+
+    public abstract double getDiscountedPrice();
 }

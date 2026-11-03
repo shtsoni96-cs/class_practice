@@ -39,6 +39,7 @@ public class ProductService {
         return product;
     }
 
+
     public List<Product> addGetInheritedProduct() {
         DigitalProduct dp = new DigitalProduct(112,
                 "Digital Product",
